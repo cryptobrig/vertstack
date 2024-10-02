@@ -3,6 +3,7 @@ import tseslint from '@typescript-eslint/eslint-plugin';
 import tseslintParser from '@typescript-eslint/parser';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import globals from 'globals';
+import vitestPlugin from 'eslint-plugin-vitest';
 
 export default [
   js.configs.recommended,
@@ -21,6 +22,7 @@ export default [
     files: ['**/*.{ts,tsx}'],
     plugins: {
       '@typescript-eslint': tseslint,
+      vitest: vitestPlugin,
     },
     languageOptions: {
       parser: tseslintParser,
@@ -32,11 +34,12 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.es2021,
-        ...globals.jest,
+        ...vitestPlugin.environments.env.globals,
       },
     },
     rules: {
       ...tseslint.configs['recommended'].rules,
+      ...vitestPlugin.configs.recommended.rules,
       '@typescript-eslint/no-unused-vars': [
         'error',
         { argsIgnorePattern: '^_' },
@@ -49,6 +52,12 @@ export default [
       react: {
         version: 'detect',
       },
+    },
+  },
+  {
+    files: ['**/*.{test,spec}.{js,jsx,ts,tsx}'],
+    rules: {
+      ...vitestPlugin.configs.recommended.rules,
     },
   },
   {

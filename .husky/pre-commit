@@ -3,20 +3,3 @@
 
 # Run lint-staged
 pnpm lint-staged
-
-# Get staged files
-STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(js|jsx|ts|tsx)$' | tr '\n' ' ')
-
-# If there are staged files, run Jest on them
-if [ -n "$STAGED_FILES" ]; then
-  echo "Running tests on staged files:"
-  echo "$STAGED_FILES"
-  if pnpm test:related $STAGED_FILES; then
-    echo "Tests passed successfully!"
-  else
-    echo "Tests failed. Please fix the failing tests before committing."
-    exit 1
-  fi
-else
-  echo "No relevant files staged for testing."
-fi
