@@ -11,9 +11,9 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
-    "test:related": "node --experimental-vm-modules node_modules/jest/bin/jest.js --findRelatedTests"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:related": "jest --findRelatedTests"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
