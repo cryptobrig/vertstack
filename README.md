@@ -16,6 +16,7 @@
 - 🚫 lint-staged for running linters on Git staged files
 - 🧪 Vitest for fast and efficient testing
 - 🛡️ Error Boundaries for graceful error handling in production
+- 🔄 Basic CI/CD pipeline with GitHub Actions
 
 ## Getting Started
 
@@ -84,6 +85,17 @@ pnpm format
 
 This project uses Husky to manage Git hooks. The pre-commit hook runs lint-staged, which in turn runs ESLint and Prettier on staged files.
 
+## CI/CD
+
+This project includes a basic CI/CD pipeline using GitHub Actions. The pipeline runs on each push and pull request to the main branch, performing the following steps:
+
+1. **Install dependencies**
+2. **Run linter**
+3. **Run tests**
+4. **Build the project**
+
+You can find the workflow configuration in .github/workflows/main.yml.
+
 ## Future Roadmap
 
 While the VERT Stack Template provides a robust foundation for many projects, here are some additional features we're working on implementing. Feel free to submit a pull request. :)
@@ -94,9 +106,8 @@ While the VERT Stack Template provides a robust foundation for many projects, he
 4. **Internationalization (i18n)**: Add support for multiple languages if required for your application.
 5. **PWA Support**: Implement service workers and add a web app manifest for progressive web app capabilities.
 6. **Comprehensive Example**: Develop a more detailed example showcasing routing, state management, and API calls.
-7. **CI/CD Pipeline**: Set up a complete CI/CD pipeline, potentially using GitHub Actions.
-8. **Expanded Documentation**: Provide more comprehensive documentation on project structure, design decisions, and best practices.
-9. **Accessibility Implementation**: Implement accessibility checks in ESLint and ensure the template follows accessibility best practices.
+7. **Expanded Documentation**: Provide more comprehensive documentation on project structure, design decisions, and best practices.
+8. **Accessibility Implementation**: Implement accessibility checks in ESLint and ensure the template follows accessibility best practices.
 
 These items are not necessarily required for all projects but represent areas where the template could be extended to meet more specific or advanced needs.
 
@@ -156,8 +167,6 @@ After adding your chosen UI library, you may need to set up theme providers or i
 3. **SEO Optimization**: Add React Helmet for basic SEO setup.
 
 4. **Authentication**: Implement a basic authentication system based on your backend requirements.
-
-5. **CI/CD**: Set up GitHub Actions for continuous integration and deployment.
 
 ## Contributing
 
