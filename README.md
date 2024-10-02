@@ -14,36 +14,8 @@
 - 💖 Prettier for code formatting
 - 🐶 Husky for Git hooks
 - 🚫 lint-staged for running linters on Git staged files
-- 🃏 Jest and React Testing Library for testing
+- 🧪 Vitest for fast and efficient testing
 - 🛡️ Error Boundaries for graceful error handling in production
-
-## Future Roadmap
-
-While the VERT Stack Template provides a robust foundation for many projects, here are some additional features you might consider implementing based on your specific project needs:
-
-1. **Environment Configuration**: Set up environment-specific configurations for development, staging, and production.
-
-2. **Performance Optimization**: Set up code splitting and lazy loading for improved performance.
-
-3. **Security Enhancements**: Add security-focused linting rules and implement other security best practices.
-
-4. **Internationalization (i18n)**: Add support for multiple languages if required for your application.
-
-5. **PWA Support**: Implement service workers and add a web app manifest for progressive web app capabilities.
-
-6. **Comprehensive Example**: Develop a more detailed example showcasing routing, state management, and API calls.
-
-7. **CI/CD Pipeline**: Set up a complete CI/CD pipeline, potentially using GitHub Actions.
-
-8. **Expanded Documentation**: Provide more comprehensive documentation on project structure, design decisions, and best practices.
-
-9. **Accessibility Implementation**: Implement the accessibility checks in ESLint and ensure the template follows accessibility best practices.
-
-These items are not necessarily required for all projects but represent areas where the template could be extended to meet more specific or advanced needs.
-
-## Description
-
-The VERT Stack Template is a robust, well-structured starting point for React projects using TypeScript, with a strong focus on code quality and developer experience. While ready for many production use-cases, teams should evaluate and implement additional features based on their specific project requirements.
 
 ## Getting Started
 
@@ -60,67 +32,73 @@ The VERT Stack Template is a robust, well-structured starting point for React pr
 - `pnpm lint:fix`: Run ESLint and automatically fix issues
 - `pnpm format`: Run Prettier to format all files
 - `pnpm prepare`: Install Husky git hooks (runs automatically after install)
-- `pnpm test`: Run Jest tests
-- `pnpm test:watch`: Run Jest in watch mode
+- `pnpm test`: Run Vitest tests
+- `pnpm test:watch`: Run Vitest in watch mode
+- `pnpm test:coverage`: Run Vitest with coverage report
 
-## How to Proceed from Here
+## Testing
 
-### Adding a UI Component Library
+This project uses Vitest for testing. Vitest is a Vite-native testing framework that's fast and efficient. It's compatible with Jest's API, making it easy to migrate existing tests.
 
-To enhance your development process and ensure UI consistency, you might want to add a UI component library. Here are some popular options:
+To run tests:
 
-1. **Ant Design (Recommended)**
+```bash
+pnpm test
+```
 
-   Ant Design is a comprehensive UI library with a wide range of components and built-in support for animations via Ant Motion.
+To run tests in watch mode:
 
-   To add Ant Design to your project:
+```bash
+pnpm test:watch
+```
 
-   ```bash
-   pnpm add antd @ant-design/icons
-   ```
+To generate a coverage report:
 
-   To use Ant Motion for animations:
+```bash
+pnpm test:coverage
+```
 
-   ```bash
-   pnpm add rc-tween-one @ant-design/react-slick
-   ```
+## Linting and Formatting
 
-   [Ant Design Documentation](https://ant.design/)
-   [Ant Motion Documentation](https://motion.ant.design/)
+This project uses ESLint for linting and Prettier for code formatting. The configuration is set up in `eslint.config.js` and `.prettierrc.json` respectively.
 
-2. **Material-UI (MUI)**
+To run the linter:
 
-   A popular React UI framework implementing Google's Material Design.
+```bash
+pnpm lint
+```
 
-   ```bash
-   pnpm add @mui/material @emotion/react @emotion/styled
-   ```
+To automatically fix linting issues:
 
-   [MUI Documentation](https://mui.com/)
+```bash
+pnpm lint:fix
+```
 
-3. **Chakra UI**
+To format code with Prettier:
 
-   A simple, modular, and accessible component library for React applications.
+```bash
+pnpm format
+```
 
-   ```bash
-   pnpm add @chakra-ui/react @emotion/react @emotion/styled framer-motion
-   ```
+## Git Hooks
 
-   [Chakra UI Documentation](https://chakra-ui.com/)
+This project uses Husky to manage Git hooks. The pre-commit hook runs lint-staged, which in turn runs ESLint and Prettier on staged files.
 
-After adding your chosen UI library, you may need to set up theme providers or import styles. Refer to the respective documentation for detailed setup instructions.
+## Future Roadmap
 
-### Next Steps
+While the VERT Stack Template provides a robust foundation for many projects, here are some additional features you might consider implementing based on your specific project needs:
 
-1. **Implement Routing**: Consider adding React Router for navigation in multi-page applications.
+1. **Environment Configuration**: Set up environment-specific configurations for development, staging, and production.
+2. **Performance Optimization**: Set up code splitting and lazy loading for improved performance.
+3. **Security Enhancements**: Add security-focused linting rules and implement other security best practices.
+4. **Internationalization (i18n)**: Add support for multiple languages if required for your application.
+5. **PWA Support**: Implement service workers and add a web app manifest for progressive web app capabilities.
+6. **Comprehensive Example**: Develop a more detailed example showcasing routing, state management, and API calls.
+7. **CI/CD Pipeline**: Set up a complete CI/CD pipeline, potentially using GitHub Actions.
+8. **Expanded Documentation**: Provide more comprehensive documentation on project structure, design decisions, and best practices.
+9. **Accessibility Implementation**: Implement accessibility checks in ESLint and ensure the template follows accessibility best practices.
 
-2. **Enhance Accessibility**: Integrate eslint-plugin-jsx-a11y into your ESLint configuration for accessibility checks.
-
-3. **SEO Optimization**: Add React Helmet for basic SEO setup.
-
-4. **Authentication**: Implement a basic authentication system based on your backend requirements.
-
-5. **CI/CD**: Set up GitHub Actions for continuous integration and deployment.
+These items are not necessarily required for all projects but represent areas where the template could be extended to meet more specific or advanced needs.
 
 ## Contributing
 
