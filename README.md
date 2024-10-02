@@ -16,7 +16,7 @@
 - 🚫 lint-staged for running linters on Git staged files
 - 🧪 Vitest for fast and efficient testing
 - 🛡️ Error Boundaries for graceful error handling in production
-- 🔄 Basic CI/CD pipeline with GitHub Actions
+- 🔄 Flexible CI/CD pipeline with GitHub Actions, supporting multiple environments
 
 ## Getting Started
 
@@ -85,16 +85,73 @@ pnpm format
 
 This project uses Husky to manage Git hooks. The pre-commit hook runs lint-staged, which in turn runs ESLint and Prettier on staged files.
 
-## CI/CD
+CI/CD
+This project uses GitHub Actions for continuous integration and deployment. The workflow is designed to be flexible, supporting setups ranging from a simple production-only environment to a full development-staging-production pipeline.
+Workflow Files
+The GitHub Actions workflow files can be found in the .github/workflows/ directory:
 
-This project includes a basic CI/CD pipeline using GitHub Actions. The pipeline runs on each push and pull request to the main branch, performing the following steps:
+pr_checks.yml: Runs checks on all pull requests
+deploy.yml: Handles deployment to all environments
 
-1. **Install dependencies**
-2. **Run linter**
-3. **Run tests**
-4. **Build the project**
+Workflow Overview
 
-You can find the workflow configuration in .github/workflows/main.yml.
+On Pull Request to any branch (pr_checks.yml):
+
+Install dependencies
+Run linter
+Run tests
+Build the project (to ensure it compiles successfully)
+
+On Push to main, development, or staging branches (deploy.yml):
+
+Install dependencies
+Determine the target environment based on the branch
+Build the project using the appropriate .env file
+Deploy to the corresponding environment
+Run health checks
+
+Environment-Specific Considerations
+
+The workflow automatically detects which environment to deploy to based on the branch:
+
+main branch deploys to production
+staging branch deploys to staging (if used)
+development branch deploys to development (if used)
+
+Each environment can have its own set of secrets and environment variables configured in GitHub Actions.
+Sensitive information like API keys and database credentials should be stored as GitHub Secrets and injected during the build process.
+
+Flexible Environment Setup
+This CI/CD configuration is designed to be flexible:
+
+For a simple setup, you can use just the main branch for production deployments.
+For a more complex setup, you can use all three branches: development, staging, and main (production).
+You can easily add or remove environments by modifying the deploy.yml file and adding or removing the corresponding .env files.
+
+Deployment Strategy
+
+Deployments are automatic upon push to their respective branches.
+For added safety, especially in production, consider adding a manual approval step by modifying the deploy.yml workflow.
+
+Monitoring and Rollback
+
+The deploy.yml workflow includes a placeholder for health checks after deployment.
+Implement proper health checks and rollback procedures based on your specific application and infrastructure.
+
+To use this setup:
+
+Ensure your repository has the necessary secrets set up in GitHub Actions.
+Modify the deploy.yml file to include your actual deployment steps.
+Implement proper health checks for your application.
+Optionally, add manual approval steps for sensitive environments like production.
+
+For detailed information on the CI/CD setup, please refer to the workflow files in the .github/workflows/ directory.
+
+### Security Considerations
+
+- Never commit sensitive information (API keys, passwords, etc.) to any of these files.
+- Use your CI/CD pipeline to inject sensitive values during the deployment process.
+- Consider using a secrets management service for production deployments.
 
 ## Future Roadmap
 

@@ -1,0 +1,40 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main, development, staging]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Determine environment
+        id: determine_env
+        run: |
+          if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
+            echo "ENV_FILE=.env.production" >> $GITHUB_OUTPUT
+            echo "DEPLOY_ENV=production" >> $GITHUB_OUTPUT
+          elif [[ ${{ github.ref }} == 'refs/heads/staging' ]]; then
+            echo "ENV_FILE=.env.staging" >> $GITHUB_OUTPUT
+            echo "DEPLOY_ENV=staging" >> $GITHUB_OUTPUT
+          else
+            echo "ENV_FILE=.env.development" >> $GITHUB_OUTPUT
+            echo "DEPLOY_ENV=development" >> $GITHUB_OUTPUT
+          fi
+      - name: Build project
+        run: pnpm build
+        env:
+          ENV_FILE: ${{ steps.determine_env.outputs.ENV_FILE }}
+      - name: Deploy to ${{ steps.determine_env.outputs.DEPLOY_ENV }}
+        run: echo "Deploying to ${{ steps.determine_env.outputs.DEPLOY_ENV }}"
+        # Add your actual deployment steps here
+      - name: Run health checks
+        run: echo "Running health checks"
+        # Add your health check steps here
