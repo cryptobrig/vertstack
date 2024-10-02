@@ -55,7 +55,7 @@ export default [
     },
   },
   {
-    files: ['**/*.{test,spec}.{js,jsx,ts,tsx}'],
+    files: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     rules: {
       ...vitestPlugin.configs.recommended.rules,
     },

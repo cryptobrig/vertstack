@@ -15,7 +15,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["vitest/globals", "node"],
+    "types": [
+      "vitest/globals",
+      "vite/client",
+      "@testing-library/jest-dom",
+      "node"
+    ],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
