@@ -15,6 +15,7 @@
 - 🐶 Husky for Git hooks
 - 🚫 lint-staged for running linters on Git staged files
 - 🃏 Jest and React Testing Library for testing
+- 🛡️ Error Boundaries for graceful error handling in production
 
 ## Future Roadmap
 
@@ -22,23 +23,21 @@ While the VERT Stack Template provides a robust foundation for many projects, he
 
 1. **Environment Configuration**: Set up environment-specific configurations for development, staging, and production.
 
-2. **Error Boundaries**: Implement React Error Boundaries for graceful error handling in production.
+2. **Performance Optimization**: Set up code splitting and lazy loading for improved performance.
 
-3. **Performance Optimization**: Set up code splitting and lazy loading for improved performance.
+3. **Security Enhancements**: Add security-focused linting rules and implement other security best practices.
 
-4. **Security Enhancements**: Add security-focused linting rules and implement other security best practices.
+4. **Internationalization (i18n)**: Add support for multiple languages if required for your application.
 
-5. **Internationalization (i18n)**: Add support for multiple languages if required for your application.
+5. **PWA Support**: Implement service workers and add a web app manifest for progressive web app capabilities.
 
-6. **PWA Support**: Implement service workers and add a web app manifest for progressive web app capabilities.
+6. **Comprehensive Example**: Develop a more detailed example showcasing routing, state management, and API calls.
 
-7. **Comprehensive Example**: Develop a more detailed example showcasing routing, state management, and API calls.
+7. **CI/CD Pipeline**: Set up a complete CI/CD pipeline, potentially using GitHub Actions.
 
-8. **CI/CD Pipeline**: Set up a complete CI/CD pipeline, potentially using GitHub Actions.
+8. **Expanded Documentation**: Provide more comprehensive documentation on project structure, design decisions, and best practices.
 
-9. **Expanded Documentation**: Provide more comprehensive documentation on project structure, design decisions, and best practices.
-
-10. **Accessibility Implementation**: Implement the accessibility checks in ESLint and ensure the template follows accessibility best practices.
+9. **Accessibility Implementation**: Implement the accessibility checks in ESLint and ensure the template follows accessibility best practices.
 
 These items are not necessarily required for all projects but represent areas where the template could be extended to meet more specific or advanced needs.
 
