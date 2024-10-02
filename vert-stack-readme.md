@@ -18,8 +18,6 @@
 - 🛡️ Error Boundaries for graceful error handling in production
 - 🔄 Flexible CI/CD pipeline with GitHub Actions, supporting multiple environments
 - 🌍 Environment-specific configuration support for development, staging, and production
-- 🚏 React Router for seamless navigation between pages
-- 🌐 Fetch API integration for efficient data fetching
 
 ## Getting Started
 
@@ -88,67 +86,68 @@ pnpm format
 
 This project uses Husky to manage Git hooks. The pre-commit hook runs lint-staged, which in turn runs ESLint and Prettier on staged files.
 
-CI/CD
+## CI/CD
+
 This project uses GitHub Actions for continuous integration and deployment. The workflow is designed to be flexible, supporting setups ranging from a simple production-only environment to a full development-staging-production pipeline.
-Workflow Files
-The GitHub Actions workflow files can be found in the .github/workflows/ directory:
 
-pr_checks.yml: Runs checks on all pull requests
-deploy.yml: Handles deployment to all environments
+### Workflow Files
 
-Workflow Overview
+The GitHub Actions workflow files can be found in the `.github/workflows/` directory:
 
-On Pull Request to any branch (pr_checks.yml):
+- `pr_checks.yml`: Runs checks on all pull requests
+- `deploy.yml`: Handles deployment to all environments
 
-Install dependencies
-Run linter
-Run tests
-Build the project (to ensure it compiles successfully)
+### Workflow Overview
 
-On Push to main, development, or staging branches (deploy.yml):
+On Pull Request to any branch (`pr_checks.yml`):
 
-Install dependencies
-Determine the target environment based on the branch
-Build the project using the appropriate .env file
-Deploy to the corresponding environment
-Run health checks
+1. Install dependencies
+2. Run linter
+3. Run tests
+4. Build the project (to ensure it compiles successfully)
 
-Environment-Specific Considerations
+On Push to main, development, or staging branches (`deploy.yml`):
+
+1. Install dependencies
+2. Determine the target environment based on the branch
+3. Build the project using the appropriate .env file
+4. Deploy to the corresponding environment
+5. Run health checks
+
+### Environment-Specific Considerations
 
 The workflow automatically detects which environment to deploy to based on the branch:
 
-main branch deploys to production
-staging branch deploys to staging (if used)
-development branch deploys to development (if used)
+- `main` branch deploys to production
+- `staging` branch deploys to staging (if used)
+- `development` branch deploys to development (if used)
 
-Each environment can have its own set of secrets and environment variables configured in GitHub Actions.
-Sensitive information like API keys and database credentials should be stored as GitHub Secrets and injected during the build process.
+Each environment can have its own set of secrets and environment variables configured in GitHub Actions. Sensitive information like API keys and database credentials should be stored as GitHub Secrets and injected during the build process.
 
-Flexible Environment Setup
+### Flexible Environment Setup
+
 This CI/CD configuration is designed to be flexible:
 
-For a simple setup, you can use just the main branch for production deployments.
-For a more complex setup, you can use all three branches: development, staging, and main (production).
-You can easily add or remove environments by modifying the deploy.yml file and adding or removing the corresponding .env files.
+- For a simple setup, you can use just the main branch for production deployments.
+- For a more complex setup, you can use all three branches: development, staging, and main (production).
+- You can easily add or remove environments by modifying the `deploy.yml` file and adding or removing the corresponding `.env` files.
 
-Deployment Strategy
+### Deployment Strategy
 
-Deployments are automatic upon push to their respective branches.
-For added safety, especially in production, consider adding a manual approval step by modifying the deploy.yml workflow.
+Deployments are automatic upon push to their respective branches. For added safety, especially in production, consider adding a manual approval step by modifying the `deploy.yml` workflow.
 
-Monitoring and Rollback
+### Monitoring and Rollback
 
-The deploy.yml workflow includes a placeholder for health checks after deployment.
-Implement proper health checks and rollback procedures based on your specific application and infrastructure.
+The `deploy.yml` workflow includes a placeholder for health checks after deployment. Implement proper health checks and rollback procedures based on your specific application and infrastructure.
 
 To use this setup:
 
-Ensure your repository has the necessary secrets set up in GitHub Actions.
-Modify the deploy.yml file to include your actual deployment steps.
-Implement proper health checks for your application.
-Optionally, add manual approval steps for sensitive environments like production.
+1. Ensure your repository has the necessary secrets set up in GitHub Actions.
+2. Modify the `deploy.yml` file to include your actual deployment steps.
+3. Implement proper health checks for your application.
+4. Optionally, add manual approval steps for sensitive environments like production.
 
-For detailed information on the CI/CD setup, please refer to the workflow files in the .github/workflows/ directory.
+For detailed information on the CI/CD setup, please refer to the workflow files in the `.github/workflows/` directory.
 
 ### Security Considerations
 
@@ -221,11 +220,8 @@ After adding your chosen UI library, you may need to set up theme providers or i
 ### Next Steps
 
 1. **Implement Routing**: Consider adding React Router for navigation in multi-page applications.
-
 2. **Enhance Accessibility**: Integrate eslint-plugin-jsx-a11y into your ESLint configuration for accessibility checks.
-
 3. **SEO Optimization**: Add React Helmet for basic SEO setup.
-
 4. **Authentication**: Implement a basic authentication system based on your backend requirements.
 
 ## Contributing
