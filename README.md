@@ -17,6 +17,7 @@
 - 🧪 Vitest for fast and efficient testing
 - 🛡️ Error Boundaries for graceful error handling in production
 - 🔄 Flexible CI/CD pipeline with GitHub Actions, supporting multiple environments
+- 🌍 Environment-specific configuration support for development, staging, and production
 
 ## Getting Started
 
