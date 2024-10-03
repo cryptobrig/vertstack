@@ -12,6 +12,9 @@ vi.mock('./components/About', () => ({
 vi.mock('./components/Contact', () => ({
   default: () => <div>Contact Page</div>,
 }));
+vi.mock('./components/ApiExample', () => ({
+  default: () => <div>API Example Page</div>,
+}));
 
 describe('App', () => {
   it('renders navigation and home page', () => {
@@ -21,8 +24,21 @@ describe('App', () => {
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('About')).toBeInTheDocument();
     expect(screen.getByText('Contact')).toBeInTheDocument();
+    expect(screen.getByText('API Example')).toBeInTheDocument();
 
     // Check if the home page is rendered by default
     expect(screen.getByText('Home Page')).toBeInTheDocument();
+  });
+
+  it('renders the navbar', () => {
+    render(<App />);
+    const navElement = screen.getByRole('navigation');
+    expect(navElement).toBeInTheDocument();
+  });
+
+  it('renders the main container', () => {
+    render(<App />);
+    const mainContainer = screen.getByText('Home Page').closest('.container');
+    expect(mainContainer).toBeInTheDocument();
   });
 });
