@@ -1,4 +1,9 @@
-# VERT Stack Template
+<div align="center">
+  <h1>
+    <img src="public/vertstack.svg" alt="VERT Stack Logo" width="50" height="50" style="vertical-align: middle; margin-right: 10px;">
+    VERT Stack Template
+  </h1>
+</div>
 
 - **V**ite for fast development and building
 - **E**SLint for code quality and consistency
