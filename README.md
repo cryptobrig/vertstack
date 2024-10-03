@@ -50,7 +50,7 @@ vert-stack-template/
 │   └── pre-commit
 │
 ├── public/
-│   └── vite.svg
+│   └── vertstack.svg
 │
 ├── src/
 │   ├── components/
@@ -70,8 +70,7 @@ vert-stack-template/
 │   │
 │   ├── App.tsx
 │   ├── App.test.tsx
-│   ├── main.tsx
-│   └── vite-env.d.ts
+│   └── main.tsx
 │
 ├── .env
 ├── .env.development
