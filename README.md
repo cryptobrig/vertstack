@@ -55,6 +55,7 @@ vert-stack-template/
 ├── src/
 │   ├── components/
 │   │   ├── About.tsx
+│   │   ├── ApiExample.tsx
 │   │   ├── Contact.tsx
 │   │   ├── ErrorBoundary.tsx
 │   │   ├── Home.tsx
