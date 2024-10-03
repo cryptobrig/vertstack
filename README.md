@@ -179,6 +179,7 @@ Remember to update your environment files (`.env.*`) with the appropriate API UR
 - `pnpm test`: Run Vitest tests
 - `pnpm test:watch`: Run Vitest in watch mode
 - `pnpm test:coverage`: Run Vitest with coverage report
+- `pnpm test:related`: Run Vitest in related mode to quickly check if changes have broken any related tests
 
 ## Testing
 
@@ -370,9 +371,11 @@ Ensure your CI/CD pipeline is configured to use the correct environment file bas
 
 ## Future Roadmap
 
-While the VERT Stack Template provides a robust foundation for many projects, here are some additional features we're working on implementing before achieving full production readiness. Feel free to submit a pull request. :)
+The VERT Stack Template includes advanced features that prepare it for a wide range of production scenarios.
 
-Prioritized list for achieving full production readiness:
+While these features address many common production requirements, users should still evaluate the template against their specific project needs, scale, and industry standards. The template provides a robust foundation that's closer to production-ready for many scenarios, but may require further customization for specific use cases or enterprise-level applications.
+
+Prioritized list for getting closer:
 
 1. **Security Enhancements**: Add security-focused linting rules and implement other security best practices.
 2. **Performance Optimization**: Set up code splitting and lazy loading for improved performance.
@@ -380,11 +383,13 @@ Prioritized list for achieving full production readiness:
 4. **SEO Optimization**: Add React Helmet for basic SEO setup. Important for applications needing to be discoverable through search engines.
 5. **Expanded Documentation**: Provide more comprehensive documentation on project structure, design decisions, and best practices. Create a landing page site for VERT stack and which will house any further documentation.
 
-Nice to haves. will get to them at some point:
+Nice to haves. Will get to them at some point:
 
 - **Internationalization (i18n) (if required)**: Add support for multiple languages if required for your application.
 - **PWA Support (if required)**: Implement service workers and add a web app manifest for progressive web app capabilities.
 - **Authentication and authorization**: Basic authentication system
+
+Feel free to submit a pull request. :)
 
 ## How to Proceed from Here
 
