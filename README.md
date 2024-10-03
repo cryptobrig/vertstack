@@ -1,9 +1,9 @@
 <div align="center">
-  <h1 style="display: flex; align-items: center; justify-content: center;">
-    <img src="public/vert-stack-logo.svg" alt="VERT Stack Logo" width="50" height="50" style="margin-right: 10px;">
+  <h1 style="display: flex; align-items: center; justify-content: center; border-bottom: none;">
+    <img src="public/vertstack.svg" alt="VERT Stack Logo" width="50" height="50" style="margin-right: 10px;">
     The VERT Stack Template
   </h1>
-  <p>An opinionated web application dev stack prepared for a wide range of production scenarios</p>
+  <p style="border-bottom: 1px solid;">An opinionated web application dev stack, prepared for a wide range of production scenarios</p>
 </div>
 
 - **V**ite for fast development and building
