@@ -179,7 +179,7 @@ Remember to update your environment files (`.env.*`) with the appropriate API UR
 - `pnpm test`: Run Vitest tests
 - `pnpm test:watch`: Run Vitest in watch mode
 - `pnpm test:coverage`: Run Vitest with coverage report
-- `pnpm test:related`: Run Vitest in related mode to quickly check if changes have broken any related tests
+- `pnpm test:related`: Run Vitest related to quickly check if changes have broken any related tests
 
 ## Testing
 
@@ -201,6 +201,12 @@ To generate a coverage report:
 
 ```bash
 pnpm test:coverage
+```
+
+To check related tests:
+
+```bash
+pnpm test:related
 ```
 
 ## Linting and Formatting
