@@ -1,8 +1,9 @@
 <div align="center">
 
-![VERT Stack Logo](public/vertstack.svg)
-
+<div style="display: flex; align-items: center; justify-content: center;>
+    <img src="public/vertstack.svg" alt="VERT Stack Logo" width="50" height="50">
 ### The VERT Stack
+</div>
 
 An opinionated web application dev stack, prepared for a wide range of production scenarios
 
