@@ -1,5 +1,5 @@
 <div align="center">
-  <div style="font-size: 2em; display: flex; align-items: center; justify-content: center;margin-bottom: .3em;">
+  <div style="font-size: 24px; display: flex; align-items: center; justify-content: center;margin-bottom: .3em;">
     <img src="public/vertstack.svg" alt="VERT Stack Logo" width="50" height="50" style="margin-right: 10px;">
     The VERT Stack
   </div>
