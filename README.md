@@ -2,7 +2,7 @@
 
 ![VERT Stack Logo](public/vertstack.svg)
 
-<h1 style="border:0;>The VERT Stack</h1>
+### The VERT Stack
 
 An opinionated web application dev stack, prepared for a wide range of production scenarios
 
