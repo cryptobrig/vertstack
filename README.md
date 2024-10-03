@@ -2,11 +2,11 @@
 
 ![VERT Stack Logo](public/vertstack.svg)
 
-# The VERT Stack Template
+<h1 style="border:0;>The VERT Stack</h1>
 
 An opinionated web application dev stack, prepared for a wide range of production scenarios
 
----
+#
 
 </div>
 
