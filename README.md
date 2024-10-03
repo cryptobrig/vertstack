@@ -1,11 +1,9 @@
 <div align="center">
-
-<div style="display: flex; align-items: center; justify-content: center;>
-    <img src="public/vertstack.svg" alt="VERT Stack Logo" width="50" height="50">
-### The VERT Stack
-</div>
-
-An opinionated web application dev stack, prepared for a wide range of production scenarios
+  <span style="font-size: 2em; display: flex; align-items: center; justify-content: center;margin-bottom: .3em;">
+    <img src="public/vertstack.svg" alt="VERT Stack Logo" width="50" height="50" style="margin-right: 10px;">
+    The VERT Stack
+  </span>
+  An opinionated web application dev stack, prepared for a wide range of production scenarios
 
 #
 
