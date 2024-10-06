@@ -30,12 +30,7 @@ A web application development stack, prepared for a wide range of production sce
 - 🧭 React Router for seamless navigation between pages
 - 🌐 Fetch API integration for efficient data fetching
 - 🔒 Enhanced security measures and best practices
-
-## Getting Started
-
-1. Clone this repository
-2. Run `pnpm install` to install dependencies
-3. Run `pnpm dev` to start the development server
+- 🚄 Optimized performance with code splitting and lazy loading
 
 ## Project Structure
 
@@ -99,7 +94,7 @@ vert-stack-template/
 - `/.husky/`: Contains Git hooks for the project.
   - `pre-commit`: Script that runs before each commit to ensure code quality.
 - `/public/`: Stores static assets that are publicly accessible.
-  - `vite.svg`: The Vite logo, used as a favicon.
+  - `vertstack.svg`: The Vertstack logo, used as a favicon.
 - `/src/`: The main source directory for the application code.
   - `/components/`: React components used in the application.
   - `/styles/`: Styles used in the application.
@@ -109,7 +104,6 @@ vert-stack-template/
   - `App.tsx`: The main application component with routing setup.
   - `App.test.tsx`: Tests for the main App component.
   - `main.tsx`: The entry point of the application.
-  - `vite-env.d.ts`: Type declarations for Vite's environment variables.
 - `.env`: Default environment variables.
 - `.env.development`: Environment variables for development.
 - `.env.production`: Environment variables for production.
@@ -117,7 +111,7 @@ vert-stack-template/
 - `.gitignore`: Specifies files and directories that Git should ignore.
 - `.prettierrc.json`: Configuration file for Prettier code formatter.
 - `eslint.config.js`: Configuration file for ESLint.
-- `index.html`: The main HTML file for the Vite application.
+- `index.html`: The main HTML file for the Vert stack application.
 - `package.json`: Project metadata and dependencies.
 - `pnpm-lock.yaml`: Lock file for pnpm dependencies.
 - `README.md`: Project documentation and overview.
@@ -126,6 +120,28 @@ vert-stack-template/
 - `tsconfig.node.json`: TypeScript configuration for Node.js environment.
 - `vite.config.ts`: Configuration file for Vite.
 - `vitest.setup.ts`: Setup file for Vitest testing framework.
+
+## Performance Optimization
+
+This template includes several performance optimizations:
+
+1. **Code Splitting**: The application uses React's `lazy` and `Suspense` features to implement code splitting. This means that each route is loaded only when it's needed, reducing the initial bundle size and improving load times.
+
+2. **Lazy Loading**: Route components are lazy-loaded, which means they're only fetched when the user navigates to that route. This improves the initial load time of the application.
+
+3. **Manual Chunk Splitting**: The Vite configuration includes manual chunk splitting for vendor libraries. This helps in better caching and can significantly reduce load times for returning visitors.
+
+4. **Preload Hints**: The `index.html` file includes preload hints for critical resources, allowing the browser to start loading these resources earlier in the page load process.
+
+These optimizations help to improve the overall performance and user experience of the application. Remember to analyze and optimize your specific application as it grows, as performance needs can vary based on the complexity and structure of your project.
+
+## Getting Started
+
+While easily customizable, the vert stack is opinionated. Use pnpm.
+
+1. Clone this repository
+2. Run `pnpm install` to install dependencies
+3. Run `pnpm dev` to start the development server
 
 ## Routing and API Integration
 
