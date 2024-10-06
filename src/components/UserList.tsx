@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchData } from '../utils/api';
+import { fetchData, sanitizeInput } from '../utils/api';
 
 interface User {
   id: number;
@@ -29,15 +29,19 @@ function UserList() {
 
   if (loading) return <div className="loading">Loading user data...</div>;
   if (error)
-    return <div className="error">Error fetching user data: {error}</div>;
+    return (
+      <div className="error">
+        Error fetching user data: {sanitizeInput(error)}
+      </div>
+    );
 
   return (
     <div className="user-list-container">
       <h2>API Integration Example: User List</h2>
       <p>
         This component demonstrates how to fetch and display data from an
-        external API using the VERT stack. We're using the JSONPlaceholder API
-        to retrieve a list of users.
+        external API using the VERT stack. We&apos;re using the JSONPlaceholder
+        API to retrieve a list of users.
       </p>
       <p>Key points:</p>
       <ul>
@@ -47,7 +51,7 @@ function UserList() {
         </li>
         <li>
           React hooks (<code>useState</code> and <code>useEffect</code>) manage
-          the component's state and side effects
+          the component&apos;s state and side effects
         </li>
         <li>Loading and error states are handled to improve user experience</li>
       </ul>
@@ -69,9 +73,9 @@ function UserList() {
           <tbody>
             {users.map((user) => (
               <tr key={user.id}>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.company.name}</td>
+                <td>{sanitizeInput(user.name)}</td>
+                <td>{sanitizeInput(user.email)}</td>
+                <td>{sanitizeInput(user.company.name)}</td>
               </tr>
             ))}
           </tbody>

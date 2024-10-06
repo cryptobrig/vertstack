@@ -29,6 +29,7 @@ A web application dev stack, prepared for a wide range of production scenarios.
 - 🌍 Environment-specific configuration support for development, staging, and production
 - 🧭 React Router for seamless navigation between pages
 - 🌐 Fetch API integration for efficient data fetching
+- 🔒 Enhanced security measures and best practices
 
 ## Getting Started
 
