@@ -3,7 +3,7 @@
 
 # The VERT Stack
 
-A web application dev stack, prepared for a wide range of production scenarios.
+A web application development stack, prepared for a wide range of production scenarios.
 
 #
 
