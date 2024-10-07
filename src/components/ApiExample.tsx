@@ -9,7 +9,9 @@ function ApiExample() {
         stack. It showcases fetching data, handling loading and error states,
         and displaying the results.
       </p>
-      <UserList />
+      <div aria-live="polite" aria-atomic="true">
+        <UserList />
+      </div>
     </div>
   );
 }

@@ -31,6 +31,7 @@ A web application development stack, prepared for a wide range of production sce
 - 🌐 Fetch API integration for efficient data fetching
 - 🔒 Enhanced security measures and best practices
 - 🚄 Optimized performance with code splitting and lazy loading
+- ♿ Comprehensive accessibility features with WCAG 2.1 compliance
 
 ## Project Structure
 
@@ -52,11 +53,15 @@ vert-stack-template/
 │   ├── components/
 │   │   ├── About.tsx
 │   │   ├── ApiExample.tsx
+│   │   ├── ApiExample.test.tsx
 │   │   ├── Contact.tsx
+│   │   ├── Contact.test.tsx
 │   │   ├── ErrorBoundary.tsx
 │   │   ├── Home.tsx
+│   │   ├── Home.test.tsx
 │   │   ├── Navbar.tsx
-│   │   └── UserList.tsx
+│   │   ├── UserList.tsx
+│   │   └── UserList.test.tsx
 │   │
 │   ├── styles/
 │   │   └── index.css

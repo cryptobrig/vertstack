@@ -32,11 +32,9 @@ describe('Home', () => {
         <Home />
       </Router>,
     );
-    const links = screen.getAllByRole('link');
-    links.forEach((link) => {
-      expect(link).toHaveAttribute('href');
-      expect(link.textContent).not.toBe('');
-    });
+    const link = screen.getByText('View API Example');
+    expect(link).toHaveAttribute('href', '/api-example');
+    expect(link).toHaveClass('button-link');
   });
 
   it('has proper heading structure', () => {

@@ -3,7 +3,7 @@ import vertStackLogo from '/vertstack.svg';
 
 function Home() {
   return (
-    <div className="home-container">
+    <main className="home-container">
       <div className="title-container">
         <img
           src={vertStackLogo}
@@ -35,11 +35,11 @@ function Home() {
         structure, and API integration.
       </p>
       <div className="cta-container">
-        <Link to="/api-example" className="button">
+        <Link to="/api-example" className="button-link">
           View API Example
         </Link>
       </div>
-    </div>
+    </main>
   );
 }
 
