@@ -21,6 +21,9 @@ importers:
         specifier: ^6.26.2
         version: 6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
+      '@testing-library/dom':
+        specifier: ^10.4.0
+        version: 10.4.0
       '@testing-library/jest-dom':
         specifier: ^6.5.0
         version: 6.5.0
@@ -55,7 +58,7 @@ importers:
         specifier: ^9.0.0
         version: 9.1.0(eslint@8.57.1)
       eslint-plugin-jsx-a11y:
-        specifier: ^6.7.1
+        specifier: ^6.10.0
         version: 6.10.0(eslint@8.57.1)
       eslint-plugin-react:
         specifier: ^7.33.2
