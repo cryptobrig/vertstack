@@ -414,16 +414,13 @@ While these features address many common production requirements, users should s
 
 Prioritized list for getting closer:
 
-1. **Security Enhancements**: Add security-focused linting rules and implement other security best practices.
-2. **Performance Optimization**: Set up code splitting and lazy loading for improved performance.
-3. **Accessibility Implementation** Implement accessibility checks in ESLint and ensure the template follows accessibility best practices.
-4. **SEO Optimization**: Add React Helmet for basic SEO setup. Important for applications needing to be discoverable through search engines.
-5. **Expanded Documentation**: Provide more comprehensive documentation on project structure, design decisions, and best practices. Create a landing page site for VERT stack and which will house any further documentation.
+1. **PWA Support (if required)**: Implement service workers and add a web app manifest for progressive web app capabilities.
+2. **SEO Optimization**: Add React Helmet for basic SEO setup. Important for applications needing to be discoverable through search engines.
+3. **Internationalization (i18n) (if required)**: Add support for multiple languages if required for your application.
+4. **Expanded Documentation**: Provide more comprehensive documentation on project structure, design decisions, and best practices. Create a landing page site for VERT stack for wider audience and better documentation.
 
 Nice to haves. Will get to them at some point:
 
-- **Internationalization (i18n) (if required)**: Add support for multiple languages if required for your application.
-- **PWA Support (if required)**: Implement service workers and add a web app manifest for progressive web app capabilities.
 - **Authentication and authorization**: Basic authentication system
 
 Feel free to submit a pull request. :)
@@ -477,11 +474,9 @@ After adding your chosen UI library, you may need to set up theme providers or i
 
 ### Next Steps
 
-1. **Enhance Accessibility**: Integrate eslint-plugin-jsx-a11y into your ESLint configuration for accessibility checks.
+1. **Build Something Amazing**: The VERT stack sets you up for success! Take the remaining steps.
 
-2. **SEO Optimization**: Add React Helmet for basic SEO setup.
-
-3. **Authentication**: Implement a basic authentication system based on your backend requirements.
+2. **Let Us Know About It**: We love seeing what others build! Browse the gallery and add yours.
 
 ## Contributing
 
