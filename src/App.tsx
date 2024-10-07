@@ -5,9 +5,9 @@ import {
   Route,
   useLocation,
 } from 'react-router-dom';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 import ErrorBoundary from './components/ErrorBoundary';
 import Navbar from './components/Navbar';
-import { Helmet } from 'react-helmet';
 
 const Home = React.lazy(() => import('./components/Home'));
 const About = React.lazy(() => import('./components/About'));
@@ -40,33 +40,35 @@ const TitleComponent: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <ErrorBoundary
-      fallback={
-        <div role="alert">
-          Something went wrong. Please try refreshing the page.
-        </div>
-      }
-    >
-      <Router>
-        <div lang="en">
-          <TitleComponent />
-          <a href="#main-content" className="skip-link">
-            Skip to main content
-          </a>
-          <Navbar />
-          <main id="main-content" className="container">
-            <Suspense fallback={<div aria-live="polite">Loading...</div>}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/api-example" element={<ApiExample />} />
-              </Routes>
-            </Suspense>
-          </main>
-        </div>
-      </Router>
-    </ErrorBoundary>
+    <HelmetProvider>
+      <ErrorBoundary
+        fallback={
+          <div role="alert">
+            Something went wrong. Please try refreshing the page.
+          </div>
+        }
+      >
+        <Router>
+          <div lang="en">
+            <TitleComponent />
+            <a href="#main-content" className="skip-link">
+              Skip to main content
+            </a>
+            <Navbar />
+            <main id="main-content" className="container">
+              <Suspense fallback={<div aria-live="polite">Loading...</div>}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/api-example" element={<ApiExample />} />
+                </Routes>
+              </Suspense>
+            </main>
+          </div>
+        </Router>
+      </ErrorBoundary>
+    </HelmetProvider>
   );
 };
 
