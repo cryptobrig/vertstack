@@ -19,11 +19,12 @@
       "vitest/globals",
       "vite/client",
       "@testing-library/jest-dom",
+      "vite-plugin-pwa/client",
       "node"
     ],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src", "**/*.test.ts", "**/*.test.tsx"],
+  "include": ["src", "**/*.test.ts", "**/*.test.tsx", "src/vite-env.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
