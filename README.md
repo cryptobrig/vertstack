@@ -32,6 +32,7 @@ A web application development stack, prepared for a wide range of production sce
 - 🔒 Enhanced security measures and best practices
 - 🚄 Optimized performance with code splitting and lazy loading
 - ♿ Comprehensive accessibility features with WCAG 2.1 compliance
+- 📱 Progressive Web App (PWA) support for enhanced mobile experience
 
 ## Project Structure
 
@@ -147,6 +148,74 @@ While easily customizable, the vert stack is opinionated. Use pnpm.
 1. Clone this repository
 2. Run `pnpm install` to install dependencies
 3. Run `pnpm dev` to start the development server
+
+## PWA Support
+
+This template now includes Progressive Web App (PWA) support, allowing users to install the app on their devices and use it offline.
+
+### PWA Features:
+
+- Installable on desktop and mobile devices
+- Offline functionality
+- App-like experience
+
+### Testing PWA Locally:
+
+1. Ensure you have mkcert installed:
+
+   ```bash
+   brew install mkcert
+   ```
+
+2. Create and install local certificates:
+
+   ```bash
+   mkcert -install
+   mkdir .cert
+   mkcert -key-file ./.cert/localhost-key.pem -cert-file ./.cert/localhost.pem localhost
+   ```
+
+3. Update your `vite.config.ts` to use these certificates:
+
+   ```typescript
+   import fs from 'fs';
+
+   export default defineConfig({
+     // ... other config
+     server: {
+       https: {
+         key: fs.readFileSync('.cert/localhost-key.pem'),
+         cert: fs.readFileSync('.cert/localhost.pem'),
+       },
+     },
+   });
+   ```
+
+4. Run the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+5. Open https://localhost:5173 in your browser. You may need to accept the self-signed certificate.
+
+### Testing Installation:
+
+- In Chrome, look for the install icon in the address bar.
+- On mobile devices, use the "Add to Home Screen" option in the browser menu.
+- The app includes a custom install button that appears when installation is available.
+
+### Production Deployment:
+
+When deploying to production, ensure your hosting provider supports HTTPS and PWA requirements. The build process will generate the necessary service worker and manifest files.
+
+### Developing with PWA:
+
+- The `vite-plugin-pwa` handles service worker generation and PWA asset management.
+- Modify the PWA configuration in `vite.config.ts` to customize icons, colors, and other PWA properties.
+- Test offline functionality by disabling network in DevTools and refreshing the page.
+
+Remember to rebuild and redeploy your app after making changes to PWA configuration.
 
 ## Routing and API Integration
 
