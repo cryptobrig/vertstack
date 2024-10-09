@@ -2,6 +2,28 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { VitePWA } from 'vite-plugin-pwa';
 import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const certPath = path.resolve(__dirname, '.cert');
+const keyPath = path.join(certPath, 'localhost-key.pem');
+const certFilePath = path.join(certPath, 'localhost.pem');
+
+let httpsConfig = false;
+
+if (fs.existsSync(keyPath) && fs.existsSync(certFilePath)) {
+  try {
+    httpsConfig = {
+      key: fs.readFileSync(keyPath),
+      cert: fs.readFileSync(certFilePath),
+    };
+  } catch (error) {
+    console.error('Error reading SSL certificates:', error);
+  }
+}
 
 export default defineConfig({
   plugins: [
@@ -41,10 +63,7 @@ export default defineConfig({
     }),
   ],
   server: {
-    https: {
-      key: fs.readFileSync('.cert/localhost-key.pem'),
-      cert: fs.readFileSync('.cert/localhost.pem'),
-    },
+    https: httpsConfig,
   },
   build: {
     rollupOptions: {
