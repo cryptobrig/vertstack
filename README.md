@@ -72,7 +72,9 @@ vert-stack-template/
 │   │
 │   ├── App.tsx
 │   ├── App.test.tsx
-│   └── main.tsx
+│   ├── pwa.ts
+│   ├── main.tsx
+│   └── vite-env.d.ts
 │
 ├── .env
 ├── .env.development
@@ -110,6 +112,7 @@ vert-stack-template/
   - `App.tsx`: The main application component with routing setup.
   - `App.test.tsx`: Tests for the main App component.
   - `main.tsx`: The entry point of the application.
+  - `vite-env.d.ts`: TypeScript declaration file for Vite-specific types and environment variables. Contains PWA worker registration type definitions to ensure proper TypeScript support for PWA functionality.
 - `.env`: Default environment variables.
 - `.env.development`: Environment variables for development.
 - `.env.production`: Environment variables for production.
